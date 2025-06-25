@@ -4,14 +4,14 @@ import geopandas as gpd
 
 # read in geodata
 #TODO: convert everything to long,lat
-state_poly = gpd.read_file("dashboard_maps/data/ConUS_state_5070.gpkg")
+state_poly = gpd.read_file("data/ConUS_state_5070.gpkg")
 state_poly["centroid"] = state_poly.centroid
 state_points = state_poly[["GEOID","centroid"]].rename({"centroid":"geometry"}, axis=1)
 state_poly = state_poly.to_crs(epsg = "4326")
 state_points = state_points.to_crs(epsg = "4326")
 
 
-county_poly = gpd.read_file("dashboard_maps/data/ConUS_county_5070.gpkg")
+county_poly = gpd.read_file("data/ConUS_county_5070.gpkg")
 county_poly["GEOID"]=county_poly["GEOID"].astype("int64")
 county_poly["centroid"] = county_poly.centroid
 county_poly = county_poly.to_crs(epsg = "4326")
