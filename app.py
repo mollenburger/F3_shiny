@@ -1,4 +1,4 @@
-from shared import fullchains, fs_counties
+from shared import fullchains
 from utils.data_utils import filter_chains
 from utils.map_utils import build_chloro, state_outline, fill_gradients, build_flow_data, make_geom_chloro, make_geom_flow
 import plotnine as p9
