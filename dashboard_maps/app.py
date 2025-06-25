@@ -42,7 +42,7 @@ def server(input: Inputs, output: Outputs, session: Session):
         if input.filter() == "none":
             chain_data = fullchains
         else:
-            counties = pd.read_csv('data/'+input.filter()+'.csv')['FIPS'].tolist()
+            counties = pd.read_csv('dashboard_maps/data/'+input.filter()+'.csv')['FIPS'].tolist()
             chain_data = filter_chains(fullchains, counties, "source_FIPS_0")
         flowarcs = []
         if len(input.arcs())>0:
