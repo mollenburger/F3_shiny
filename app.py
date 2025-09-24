@@ -20,7 +20,7 @@ app_ui = ui.page_fluid(
                 choices = { 0:"Stage 1", 1:"Stage 2"}),
             ui.input_switch("arcsize", "Scale flow arcs by flow volume", value = True),
             ui.input_select(id = "filter", label = "Select source counties to fileter",
-                choices = {"none":"No filter", "fs_counties":"Upper Mississippi Foodscape"}, selected = "none"),
+                choices = {"none":"No filter", "fs_counties":"Upper Mississippi Foodscape", "dickc_25":"Dickcissel high abundance"}, selected = "none"),
         ),
         ui.output_plot("chloro")
     )
@@ -44,15 +44,18 @@ def server(input: Inputs, output: Outputs, session: Session):
         else:
             counties = pd.read_csv('data/'+input.filter()+'.csv')['FIPS'].tolist()
             chain_data = filter_chains(fullchains, counties, "source_FIPS_0")
+
         flowarcs = []
         if len(input.arcs())>0:
             if input.crop() == "corn_direct":
                 steps = 1
-            else: steps = 2
+            else: 
+                steps = 2
             if input.arcsize():
                 arc_size = "scaled"
                 flowarcs.append(p9.scale_size_continuous(range = [0,1]))
-            else: arc_size = "fixed"
+            else: 
+                arc_size = "fixed"
             flows_to = list(input.com())
             flows = build_flow_data(chain_data[input.crop()], flows_to, steps)
             stages = list(map(int,input.arcs()))
@@ -70,7 +73,8 @@ def server(input: Inputs, output: Outputs, session: Session):
             basemap = 0
         if input.crop() == "soy":
             colorval = "soy"
-        else: colorval = "corn"
+        else: 
+            colorval = "corn"
         chloromap = (p9.ggplot()
             + basemap
             + state_outline

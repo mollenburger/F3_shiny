@@ -28,7 +28,7 @@ def get_chains(folderpath,nsteps=1):
         for i in range(nsteps):
             com = Path(name).stem.split('_')[0].split('-')[i]
             df[f"flow_{i}_com"] = com
-        df[f"dest_final"] = Path(name).stem.split('_')[0].split('-')[i+1]
+        df["dest_final"] = Path(name).stem.split('_')[0].split('-')[i+1]
         li.append(df)
     return pd.concat(li, ignore_index=True)
 
