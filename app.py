@@ -19,7 +19,7 @@ app_ui = ui.page_fluid(
             ui.input_checkbox_group(id = "arcs", label = "Flow arcs to display", 
                 choices = { 0:"Stage 1", 1:"Stage 2"}),
             ui.input_switch("arcsize", "Scale flow arcs by flow volume", value = True),
-            ui.input_select(id = "filter", label = "Select source counties to fileter",
+            ui.input_select(id = "filter", label = "Select source counties to filter",
                 choices = {"none":"No filter", "fs_counties":"Upper Mississippi Foodscape", "dickc_25":"Dickcissel high abundance"}, selected = "none"),
         ),
         ui.output_plot("chloro")
