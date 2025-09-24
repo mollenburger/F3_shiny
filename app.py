@@ -65,7 +65,7 @@ def server(input: Inputs, output: Outputs, session: Session):
             elif len(input.arcs()) ==2:
                 for com in input.com():
                     flowarcs.append(make_geom_flow(flows['flowarcs'], com, 1, size = arc_size))
-                    flowarcs.append(make_geom_flow(flows['flowarcs'], com, 0, color = "#2c2c2c", size = arc_size))       
+                    flowarcs.append(make_geom_flow(flows['flowarcs'], com, 0, color = "#57ad4d", size = arc_size))       
         if input.com():
             mapdata = build_chloro(chain_data, input.crop(), "flow_kg_0",input.com())
             basemap = make_geom_chloro(mapdata, input.com())

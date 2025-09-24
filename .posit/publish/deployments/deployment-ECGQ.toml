@@ -11,7 +11,7 @@ id = '0197a7d4-e07e-8f24-e282-ed1fdf1920bc'
 dashboard_url = 'https://connect.posit.cloud/mollenburger/content/0197a7d4-e07e-8f24-e282-ed1fdf1920bc'
 direct_url = 'https://0197a7d4-e07e-8f24-e282-ed1fdf1920bc.share.connect.posit.cloud'
 logs_url = 'https://connect.posit.cloud/mollenburger/content/0197a7d4-e07e-8f24-e282-ed1fdf1920bc/history'
-deployed_at = '2025-09-24T15:19:21-05:00'
+deployed_at = '2025-09-24T15:20:23-05:00'
 files = [
   '.posit/publish/F3_shiny-VG91.toml',
   '.posit/publish/deployments/deployment-ECGQ.toml',
